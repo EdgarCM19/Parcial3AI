@@ -14,6 +14,7 @@ public class RNA {
 
 	public static float trainRNA(int hidden_layers, int neurons_per_layer, int epochs, 
 			float learning_rate, float momentum) {
+		System.out.println("[RNA]>Start");
 		try {
 			FileReader fr = new FileReader(new File(DATA_BASE_PATH));
 			Instances train = new Instances(fr);
@@ -25,10 +26,11 @@ public class RNA {
 			mlp.buildClassifier(train);
 			Evaluation eval = new Evaluation(train);
 			eval.evaluateModel(mlp, train);
-			System.out.println(eval.toSummaryString());
-			System.out.println(eval.correct());
+			//System.out.println(eval.toSummaryString());
+			//System.out.println(eval.correct());
 			float perce = (float) ((eval.correct() * 100) / (eval.correct() + eval.incorrect()));
-			System.out.println(perce);
+			System.out.println("[RNA]>%: " + perce);
+			System.out.println("[RNA]>END");
 			return perce;
 		} catch (Exception e) {	 
 			e.printStackTrace();
@@ -38,7 +40,6 @@ public class RNA {
 	
 	public static String optionsToString(int hidden_layers, int neurons_per_layer, int epochs, 
 			float learning_rate, float momentum) {
-		System.out.println("pto");
 		StringBuffer options = new StringBuffer();
 		options.append("-L " + String.valueOf(learning_rate) + " ");
 		options.append("-M " + String.valueOf(momentum) + " ");
