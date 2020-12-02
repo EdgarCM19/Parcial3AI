@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class GeneticConfig {
 	
-	public static final int N_ATRRIBUTES 		= 5;
-	public static final int N_CLASSES			= 32;
+	public static final int N_ATRRIBUTES 		= 3;//5;
+	public static final int N_CLASSES			= 13;//32;
 	
 	public static final int [] HIDDEN_RANGE 	= {1, 5};
 	public static final int HIDDEN_DELTA 		= 1;
@@ -34,9 +34,9 @@ public class GeneticConfig {
 	public static final int INITIAL_POPULATION 	= 30;
 	public static final float SURVIVAL_FACTOR 	= 0.6f;
 	public static final int CHILDS 				= 2; //Nunca se usa
-	public static final float LIMIT				= 95f;
+	public static final float LIMIT				= 86f;
 	public static final float MUTATION			= 3f;
-	public static final int MAX_GEN 			= 5;
+	public static final int MAX_GEN 			= 3;
 	
 	public static final int SELECT_A_PERCENT	= 40;
 	public static final int SELECT_B_PERCENT	= 40;

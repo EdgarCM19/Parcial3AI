@@ -25,7 +25,6 @@ public class MainWindow extends JFrame {
 	
 	private JPanel main_panel, lateral_panel, info_rna_panel, info_ga_panel,
 				log_panel;
-	//private PlotPanel graph_panel;
 	private LineGraph graph_panel;
 	private JButton btn_start, btn_save, btn_config_rna, btn_config_ga;
 	private JTextArea log_area;
@@ -34,7 +33,6 @@ public class MainWindow extends JFrame {
 	
 	public MainWindow() {
 		genetic = new GA();
-		genetic.setWindow(this);
 		setSize(1080, 720);
 		setTitle("Algoritmo genetico para entrenar una RNA");
 		initComponents();
@@ -98,35 +96,6 @@ public class MainWindow extends JFrame {
 		log.append("Rango de momentum: [" + GeneticConfig.MOMENTUM_RANGE[0] + ", " + GeneticConfig.MOMENTUM_RANGE[1] +"]\n");
 		return log.toString();
 	}
-	/*
 	
-	public void updatePlot(Poblacion poblacion) {
-		//ArrayList<Double> x_data = new ArrayList<Double>();
-		//ArrayList<Double> y_data = new ArrayList<Double>();
-		System.out.println("--------------");
-		System.out.println("Actualizateeeee");
-		System.out.println("--------------");
-		double [] x_data = new double[poblacion.parents.tam];
-		double [] y_data = new double[poblacion.parents.tam];
-		Nodo temp = poblacion.parents.inicio;
-		int n = 0;
-		while(temp != null) {
-			x_data[n] = n;
-			y_data[n++] = temp.t.fitness;
-			temp = temp.sig;
-		}
-		for(double x : y_data)
-			System.out.print(x + ", ");
-		System.out.println("");
-		graph_panel.updateData(x_data, y_data);
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		System.out.println("###################################");
-	}
-	*/
-
 
 }

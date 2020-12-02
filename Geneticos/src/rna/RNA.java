@@ -10,7 +10,7 @@ import weka.core.Utils;
 
 public class RNA {
 	
-	private static final String DATA_BASE_PATH = "src/res/dataset/dataset_2.arff";
+	private static final String DATA_BASE_PATH = "src/res/dataset/diabetes.arff";
 
 	public static float trainRNA(int hidden_layers, int neurons_per_layer, int epochs, 
 			float learning_rate, float momentum) {
@@ -26,8 +26,6 @@ public class RNA {
 			mlp.buildClassifier(train);
 			Evaluation eval = new Evaluation(train);
 			eval.evaluateModel(mlp, train);
-			//System.out.println(eval.toSummaryString());
-			//System.out.println(eval.correct());
 			float perce = (float) ((eval.correct() * 100) / (eval.correct() + eval.incorrect()));
 			System.out.println("[RNA]>%: " + perce);
 			System.out.println("[RNA]>END");

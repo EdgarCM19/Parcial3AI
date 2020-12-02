@@ -10,7 +10,7 @@ import rna.RNAConfig;
 public class Individuo {
 	
 	char cromosoma[];
-	float fitness;
+	public float fitness;
 	float pr;
 	RNAConfig params;
 	

@@ -3,6 +3,7 @@ package genetic;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import gui.ChartsWindow;
 import gui.MainWindow;
 
 public class GeneticsMain {
@@ -36,8 +37,14 @@ public class GeneticsMain {
         System.out.println("El mejor individuo fue:");
         ind.mostrar();
         System.out.println("Fitness"+ind.fitness);
+        ChartsWindow graficas = new ChartsWindow();
+        graficas.setVisible(true);
+        graficas.plotTotalPercent(gnr.poblaciones);
+        graficas.plotPercentPerGeneration(gnr.average_per_gen);
+        graficas.plotTimePerGeneration(gnr.time_per_gen);
+        graficas.plotPopulationSizePerGeneration(gnr.population_per_gen);
+        graficas.repaint();
         
-		
 		/*
 		Individuo in = new Individuo();
 		System.out.println(in.params);
