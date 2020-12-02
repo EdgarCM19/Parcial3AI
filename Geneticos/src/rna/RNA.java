@@ -10,7 +10,7 @@ import weka.core.Utils;
 
 public class RNA {
 	
-	private static final String DATA_BASE_PATH = "src/res/dataset/diabetes.arff";
+	private static final String DATA_BASE_PATH = "src/res/dataset/dataset_2.arff";
 
 	public static float trainRNA(int hidden_layers, int neurons_per_layer, int epochs, 
 			float learning_rate, float momentum) {

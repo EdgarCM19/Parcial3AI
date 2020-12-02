@@ -1,12 +1,14 @@
 package genetic;
 
-import Exceptions.InvalidChromosomeSize;
-import Exceptions.ParameterOutOfRange;
-import rna.RNAConfig;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
+import gui.MainWindow;
 
 public class GeneticsMain {
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		/*
 		GA gnr=new GA();
         Individuo ind=gnr.Genetic();
         System.out.println("El mejor individuo fue:");
@@ -14,23 +16,41 @@ public class GeneticsMain {
         System.out.println("Que bonito y entendible es:");
         System.out.println(ind.params);
         System.out.println("Fitness"+ind.fitness);
-	}
-
-}
-
-/*
-char [] test = GeneticConfig.randomChromosome();
-		for(char c : test)
-			System.out.print(c);
+        */
+		/*
 		try {
-			RNAConfig rna_conf = new RNAConfig(test);
-			System.out.println(rna_conf.hidden_layers);
-			System.out.println(rna_conf.neurons_per_layer);
-			System.out.println(rna_conf);
-		} catch (ParameterOutOfRange e) {
-			System.out.println("Error si que si");
-			e.printStackTrace();
-		} catch (InvalidChromosomeSize e) {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-*/
+		*/
+		
+		//new Principal().setVisible(true);
+		//new MainWindow().setVisible(true);
+		
+		
+		
+		GA gnr=new GA();
+        Individuo ind=gnr.Genetic();
+        System.out.println("El mejor individuo fue:");
+        ind.mostrar();
+        System.out.println("Fitness"+ind.fitness);
+        
+		
+		/*
+		Individuo in = new Individuo();
+		System.out.println(in.params);
+		System.out.println("Entra: ");
+		for(char c : in.cromosoma)
+			System.out.print(c);
+		System.out.println("");
+		in.mutar();
+		System.out.println("Sale: ");
+		for(char c : in.cromosoma)
+			System.out.print(c);
+		System.out.println("");
+		System.out.println(in.params);
+		*/
+	}
+}
