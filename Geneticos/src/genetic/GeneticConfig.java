@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class GeneticConfig {
 	
-	public static final String DATA_SET_PATH = "src/res/dataset/diabetes.arff";
+	public static final String DATA_SET_PATH = "src/res/dataset/dataset_2.arff";
 	
-	public static final int N_ATRRIBUTES 		= 3;//5;
-	public static final int N_CLASSES			= 13;//32;
+	public static final int N_ATRRIBUTES 		= 5;
+	public static final int N_CLASSES			= 32;
 	
 	public static final int [] HIDDEN_RANGE 	= {1, 5};
 	public static final int HIDDEN_DELTA 		= 1;
