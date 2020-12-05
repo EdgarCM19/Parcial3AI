@@ -6,7 +6,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import gui.ChartsWindow;
-import gui.MainWindow;
 import rna.RNA;
 
 public class GeneticsMain {

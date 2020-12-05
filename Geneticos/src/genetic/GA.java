@@ -6,7 +6,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import gui.MainWindow;
 import weka.core.pmml.jaxbbindings.LocalTransformations;
 
 public class GA {
