@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GeneticConfig {
 	
-	public static final String DATA_SET_PATH = "src/res/dataset/dataset_2.arff";
+	public static final String DATA_SET_PATH 	= "src/res/dataset/dataset_2.arff";
 	
 	public static final int N_ATRRIBUTES 		= 5;
 	public static final int N_CLASSES			= 32;
@@ -22,22 +22,22 @@ public class GeneticConfig {
 	public static final int EPOCH_BITS 			= calculateBits(EPOCHS_RANGE, EPOCHS_DELTA);
 	
 	public static final float [] LEARNING_RANGE	= {0f, 0.3f};
-	public static final int LEARNING_DELTA 		= 50;
+	public static final int LEARNING_DELTA 		= 90;
 	public static final int LEARNING_BITS 		= bitsForNumber(LEARNING_DELTA);
 	
 	public static final float [] MOMENTUM_RANGE	= {0f, 0.3f};
-	public static final int MOMENTUM_DELTA 		= 50;
+	public static final int MOMENTUM_DELTA 		= 40;
 	public static final int MOMENTUM_BITS 		= bitsForNumber(MOMENTUM_DELTA);
 	
 	public static final int CHROMOSOME_SIZE 	= NEURONS_BITS + HIDDEN_BITS + EPOCH_BITS + LEARNING_BITS + MOMENTUM_BITS;
 	
 	public static final int [] BIT_PER_PARAM 	= {HIDDEN_BITS, NEURONS_BITS, EPOCH_BITS, LEARNING_BITS, MOMENTUM_BITS};		
 	
-	public static final int INITIAL_POPULATION 	= 30;
+	public static final int INITIAL_POPULATION 	= 40;
 	public static final float SURVIVAL_FACTOR 	= 60f;
 	public static final float LIMIT				= 99.6f;
 	public static final float MUTATION			= 3f;
-	public static final int MAX_GEN 			= 5;
+	public static final int MAX_GEN 			= 4;
 	
 	public static final int SELECT_A_PERCENT	= 40;
 	public static final int SELECT_B_PERCENT	= 20;
