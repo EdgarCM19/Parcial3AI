@@ -2,33 +2,35 @@ package rna;
 
 import java.io.File;
 import java.io.FileReader;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
+import genetic.GeneticConfig;
 import weka.classifiers.Evaluation;
 import weka.classifiers.functions.MultilayerPerceptron;
 import weka.core.Instances;
 import weka.core.Utils;
 
 public class RNA {
-	
-	private static final String DATA_BASE_PATH = "src/res/dataset/diabetes.arff";
 
 	public static float trainRNA(int hidden_layers, int neurons_per_layer, int epochs, 
-			float learning_rate, float momentum) {
-		System.out.println("[RNA]>Start");
+			float learning_rate, float momentum, int index) {
+		System.out.println("\n**********************");
+		System.out.println(getDate() + "-[RNA]>Inicio de entrenamiento " + index);
 		try {
-			FileReader fr = new FileReader(new File(DATA_BASE_PATH));
+			FileReader fr = new FileReader(new File(GeneticConfig.DATA_SET_PATH));
 			Instances train = new Instances(fr);
 			train.setClassIndex(train.numAttributes() - 1);
 			MultilayerPerceptron mlp = new MultilayerPerceptron();
 			String options = optionsToString(hidden_layers, neurons_per_layer, epochs, learning_rate, momentum);
-			System.out.println(options);
 			mlp.setOptions(Utils.splitOptions(options));
 			mlp.buildClassifier(train);
 			Evaluation eval = new Evaluation(train);
 			eval.evaluateModel(mlp, train);
 			float perce = (float) ((eval.correct() * 100) / (eval.correct() + eval.incorrect()));
-			System.out.println("[RNA]>%: " + perce);
-			System.out.println("[RNA]>END");
+			System.out.println(getDate() + "-[RNA]>Pocentaje obtenido: " + perce);
+			System.out.println(getDate() + "-[RNA]>Configuracion: " + options);
+			System.out.println("[RNA]>Fin del entrenamiento " + index);
 			return perce;
 		} catch (Exception e) {	 
 			e.printStackTrace();
@@ -52,6 +54,8 @@ public class RNA {
 		return options.toString();
 	}
 	
-	
+	private static String getDate() {
+		return DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss").format(LocalDateTime.now());
+	}
 	
 }

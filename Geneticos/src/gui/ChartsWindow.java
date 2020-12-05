@@ -13,8 +13,8 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
-import genetic.Individuo;
-import genetic.Poblation;
+import genetic.Individual;
+import genetic.Population;
 
 public class ChartsWindow extends JFrame {
 	
@@ -34,10 +34,10 @@ public class ChartsWindow extends JFrame {
 		this.add(main_panel);
 	}
 	
-	public void plotTotalPercent(Poblation population) {
+	public void plotTotalPercent(Population population) {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 		int cont = 0;
-		for(Individuo individual : population.P) 
+		for(Individual individual : population.P) 
 			dataset.addValue(individual.fitness, "Individuo", String.valueOf(cont++));
 		JFreeChart chart = ChartFactory.createLineChart(
 				"Porcentajes de la poblacion final",

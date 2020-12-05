@@ -46,12 +46,8 @@ public class LineGraph extends JPanel {
 				PlotOrientation.VERTICAL,
 				true, true, false
 		);	
-		//this.removeAll();
 		panel = new ChartPanel(chart);
-		//panel.removeAll();
-		//panel.add(new ChartPanel(chart));
 		panel.updateUI();
-		//this.add(panel, BorderLayout.CENTER);
 		updateUI();	
 		
 	}

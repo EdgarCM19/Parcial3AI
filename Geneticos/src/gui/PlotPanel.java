@@ -88,14 +88,9 @@ public class PlotPanel extends JPanel {
 	}
 	
 	public void updatePanel(String name, double [] x, double [] y) {
-		System.out.println("Ahhhhhh");
+		System.out.println("Poke?");
+		this.removeAll();
 		initPlot(name, x, y);
-		try {
-			Thread.sleep(1000);
-			repaint();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 	
 }
